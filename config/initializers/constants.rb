@@ -1,0 +1,3 @@
+GOOGLE_WEB_CLIENT_ID = "876835277274-s6149p4p60hlrelhmci62dan4gmqdl6s.apps.googleusercontent.com"
+GOOGLE_WEB_SECRET = "FGS8TgtkLjAO4oLzXPGNVBSU"
+GOOGLE__KEY = ""
