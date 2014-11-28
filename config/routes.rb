@@ -14,9 +14,13 @@ Rails.application.routes.draw do
   get 'user/api_edit'
 
   get '/auth/:provider/callback', to: 'session#create',  via: [:post, :get]
-  match "/api/android/auth", to: 'session#auth', via: [:post, :get]
-  match "/api/shelters", to: 'static_page#api_shelters', via: [:post, :get]
 
+  match "/addshelter", to: 'shelter#add', via: [:post, :get]
+
+
+  match "/api/android/auth", to: 'session#auth', via: [:post, :get]
+  match "/api/shelters", to: 'shelter#api_shelters', via: [:post, :get]
+  match "/api/add_shelter", to: 'shelter#api_add_shelter', via: [:post]
   match "/api/users/", to: 'user#api_index', via: [:get]
   match "/api/users/:id", to: 'user#api_show', via: [:get]
   match "/api/users/:id", to: 'user#api_edit', via: [:put]

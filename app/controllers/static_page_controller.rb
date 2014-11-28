@@ -15,8 +15,8 @@ class StaticPageController < ApplicationController
  	end
 
   def api_shelters
-  	@shelters = Shelter.all
-  	shelters_all = @shelters.to_json
+    @shelters = Shelter.all
+    shelters_all = @shelters.to_json
     shelters_all = "{ shelters:" + shelters_all + "}"
     render json: shelters_all
   end

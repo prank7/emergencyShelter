@@ -11,7 +11,8 @@ class SessionController < ApplicationController
     end
     session[:user_id] = user.id
     current_user = user
-    render json: user
+   
+    redirect_to root_path
   end
 
 
@@ -20,7 +21,7 @@ class SessionController < ApplicationController
     token = request.headers["Authorization"]
     password = request.headers["HTTP_ANDROID_SECRET"]
     if password == "Banjarapalya"
-	    response = HTTParty.get("https://www.googleapis.com/oauth2/v2/userinfo",
+	    response =   HTTParty.get("https://www.googleapis.com/oauth2/v2/userinfo",
 	                            headers: {"Access_token"  => token,
 	                                      "Authorization" => "OAuth #{token}"})
 	    info = ActiveSupport::JSON.decode(response.body)
@@ -34,10 +35,7 @@ class SessionController < ApplicationController
 	  	head 404
 	  end
   end
-
-
    
-
   def destroy
 
   end
